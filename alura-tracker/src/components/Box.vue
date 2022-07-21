@@ -11,7 +11,7 @@ export default defineComponent({
     data() {
         return {
             estilos: {
-                backgroundColor: '#FAF0CA'
+                background: '#D68728'
             }
         }
     }
