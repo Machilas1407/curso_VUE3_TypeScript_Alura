@@ -1,5 +1,8 @@
 <template>
     <section>
+        <span class="icon">
+            <i class="fa fa-timer"></i>
+        </span>
         <strong class="display">{{ tempoDecorrido }}</strong>
     </section>
 </template>
