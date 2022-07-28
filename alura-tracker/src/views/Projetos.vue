@@ -1,6 +1,6 @@
 <template>
     <div class="projetos">
-        <h1 class="title">
+        <h1 class="title display">
             Projetos
         </h1>
         <router-view> </router-view>
@@ -17,5 +17,9 @@ export default defineComponent({
 <style scoped>
 .projetos {
     padding: 1.25rem;
+}
+
+.display {
+    color: var(--texto-primario);
 }
 </style>
