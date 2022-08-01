@@ -1,28 +1,4 @@
 {
-  "projetos": [
-    {
-      "id": 1,
-      "nome": "Alura Tracker"
-    },
-    {
-      "nome": "Plano de Estudos",
-      "id": 2
-    }
-  ],
-  "tarefas": [
-    {
-      "id": 1,
-      "duracaoEmSegundos": 120,
-      "descricao": "Apenas UM TESTE",
-      "projeto": {
-        "id": 1,
-        "nome": "Alura Tracker"
-      }
-    },
-    {
-      "duracaoEmSegundos": 1,
-      "descricao": "Outro Teste",
-      "id": 2
-    }
-  ]
+  "projetos": [],
+  "tarefas": []
 }
