@@ -7,7 +7,7 @@
             Você não está muito produtivo hoje 🫤
         </Box>
 
-        <div class="modal" :class="{ 'is-active': tarefaSelecionada }">
+        <div class="modal" :class="{ 'is-active': tarefaSelecionada }" v-if="tarefaSelecionada">
             <div class="modal-background"></div>
             <div class="modal-card">
                 <header class="modal-card-head">
@@ -15,10 +15,15 @@
                     <button @click="fecharModal()" class="delete" aria-label="close"></button>
                 </header>
                 <section class="modal-card-body">
-                    <!-- Content ... -->
+                    <div class="field">
+                        <label for="descricaoDaTarefa" class="label">
+                            Descrição
+                        </label>
+                        <input type="text" v-model="tarefaSelecionada.descricao" id="descricaoDaTarefa" class="input">
+                    </div>
                 </section>
                 <footer class="modal-card-foot">
-                    <button class="button is-success">Salvar Alterações</button>
+                    <button @click="alterarTarefa" class="button is-success">Salvar Alterações</button>
                     <button @click="fecharModal()" class="button">Cancelar</button>
                 </footer>
             </div>
@@ -35,7 +40,7 @@ import Tarefa from "../components/Tarefa.vue";
 import Box from "../components/Box.vue";
 import ITarefa from '../interfaces/ITarefa'
 import { useStore } from "@/store";
-import { CADASTRAR_TAREFA, OBTER_PROJETOS, OBTER_TAREFAS } from "@/store/tipo-acoes";
+import { ALTERAR_TAREFA, CADASTRAR_TAREFA, OBTER_PROJETOS, OBTER_TAREFAS } from "@/store/tipo-acoes";
 
 export default defineComponent({
     name: 'App',
@@ -46,7 +51,8 @@ export default defineComponent({
     },
     data() {
         return {
-            tarefaSelecionada: null as ITarefa | null
+            tarefaSelecionada: null as ITarefa | null,
+            descricaoDaTarefa: ''
         }
     },
     computed: {
@@ -64,6 +70,10 @@ export default defineComponent({
         },
         fecharModal() {
             this.tarefaSelecionada = null
+        },
+        alterarTarefa() {
+            this.store.dispatch(ALTERAR_TAREFA, this.tarefaSelecionada)
+                .then(() => this.fecharModal())
         }
     }
     ,
@@ -73,7 +83,7 @@ export default defineComponent({
         store.dispatch(OBTER_PROJETOS)
 
         return {
-            tarefas: computed(() => store.state.tarefas),
+            tarefas: computed(() => store.state.tarefa.tarefas),
             store
         }
     }
