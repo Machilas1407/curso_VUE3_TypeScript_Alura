@@ -1,7 +1,7 @@
 import http from "@/http";
 import IProjeto from "@/interfaces/IProjeto";
 import { Estado } from "@/store";
-import { OBTER_PROJETOS, CADASTRAR_PROJETO, REMOVER_PROJETO } from "@/store/tipo-acoes";
+import { OBTER_PROJETOS, CADASTRAR_PROJETO, REMOVER_PROJETO, ALTERAR_PROJETO } from "@/store/tipo-acoes";
 import { ADICIONA_PROJETO, ALTERA_PROJETO, EXCLUIR_PROJETO, DEFINIR_PROJETOS } from "@/store/tipo-mutacoes";
 import { Module } from "vuex";
 
@@ -39,7 +39,7 @@ export const projeto: Module<EstadoProjeto, Estado> = {
                 nome: nomeDoProjeto
             })
         },
-        [ALTERA_PROJETO](contexto, projeto: IProjeto) {
+        [ALTERAR_PROJETO](contexto, projeto: IProjeto) {
             return http.put(`/projetos/${projeto.id}`, projeto)
         },
         [REMOVER_PROJETO]({ commit }, id: string) {

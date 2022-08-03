@@ -57,7 +57,7 @@ export default defineComponent({
     },
     computed: {
         listaEstaVazia(): boolean {
-            return this.tarefas.length === 0
+            return this.tarefas.length == 0
         },
 
     },

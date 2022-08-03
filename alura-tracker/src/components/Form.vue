@@ -23,7 +23,7 @@
 
 <script lang="ts">
 import { key } from "@/store"
-import { computed, defineComponent } from "vue"
+import { computed, defineComponent, ref } from "vue"
 import { useStore } from "vuex"
 import Temporizador from "./Temporizador.vue"
 
@@ -33,26 +33,47 @@ export default defineComponent({
     components: {
         Temporizador
     },
-    data() {
-        return {
-            descricao: '',
-            idProjeto: ''
-        }
-    },
-    methods: {
-        finalizarTarefa(tempoDecorrido: number): void {
-            this.$emit('aoSalvarTarefa', {
-                duracaoEmSegundos: tempoDecorrido,
-                descricao: this.descricao,
-                projeto: this.projetos.find(proj => proj.id == this.idProjeto)
-            })
-            this.descricao = ''
-        }
-    },
-    setup() {
+    // data() {
+    //     return {
+    //         descricao: '',
+    //         idProjeto: ''
+    //     }
+    // },
+    // methods: {
+    //     finalizarTarefa(tempoDecorrido: number): void {
+    //         this.$emit('aoSalvarTarefa', {
+    //             duracaoEmSegundos: tempoDec orrido,
+    //             descricao: this.descricao,
+    //             projeto: this.projetos.find(proj => proj.id == this.idProjeto)
+    //         })
+    //         this.descricao = ''
+    //     }
+    // },
+
+    // explicacao do setuo no arquivo de formulario
+    setup(props, { emit }) {  // poderia usar o contexto mas desestruturou e pegou somente o emit
+
         const store = useStore(key)
+
+        const projetos = computed(() => store.state.projeto.projetos)
+
+        const descricao = ref('')
+        const idProjeto = ref('')
+
+        const finalizarTarefa = (tempoDecorrido: number): void => {
+            emit('aoSalvarTarefa', {
+                duracaoEmSegundos: tempoDecorrido,
+                descricao: descricao,
+                projeto: projetos.value.find(proj => proj.id == idProjeto.value)
+            })
+            descricao.value = ''
+        }
+
         return {
-            projetos: computed(() => store.state.projeto.projetos)
+            projetos,
+            descricao,
+            idProjeto,
+            finalizarTarefa
         }
     }
 })
