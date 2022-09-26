@@ -2,17 +2,22 @@
   "projetos": [
     {
       "id": 1,
-      "nome": "Plano de Estudos 2.0"
-    },
-    {
-      "id": 2,
-      "nome": "Curso de Inglês Wizard"
+      "nome": "Plano de Estudos"
     }
   ],
   "tarefas": [
     {
-      "duracaoEmSegundos": 3,
-      "descricao": "Estudando Projeto 1",
+      "duracaoEmSegundos": 1,
+      "descricao": {
+        "__v_isShallow": false,
+        "dep": {
+          "w": 0,
+          "n": 0
+        },
+        "__v_isRef": true,
+        "_rawValue": "Teste",
+        "_value": "Teste"
+      },
       "projeto": {
         "nome": "Plano de Estudos",
         "id": 1
@@ -21,24 +26,38 @@
     },
     {
       "duracaoEmSegundos": 2,
-      "descricao": "Estudo Pessoal ",
+      "descricao": {
+        "__v_isShallow": false,
+        "dep": {
+          "w": 0,
+          "n": 0
+        },
+        "__v_isRef": true,
+        "_rawValue": "TEste 2 ",
+        "_value": "TEste 2 "
+      },
       "projeto": {
-        "nome": "Estudo Pessoais",
-        "id": 2
+        "nome": "Plano de Estudos",
+        "id": 1
       },
       "id": 2
     },
     {
-      "duracaoEmSegundos": 4,
-      "descricao": "Teste",
-      "projeto": {
-        "id": 1,
-        "nome": "Plano de Estudos 2"
+      "duracaoEmSegundos": 3,
+      "descricao": {
+        "__v_isShallow": false,
+        "dep": {
+          "w": 0,
+          "n": 0
+        },
+        "__v_isRef": true,
+        "_rawValue": "asasas",
+        "_value": "asasas"
       },
       "id": 3
     },
     {
-      "duracaoEmSegundos": 4,
+      "duracaoEmSegundos": 2,
       "descricao": {
         "__v_isShallow": false,
         "dep": {
@@ -46,17 +65,13 @@
           "n": 0
         },
         "__v_isRef": true,
-        "_rawValue": "Testando o setup",
-        "_value": "Testando o setup"
-      },
-      "projeto": {
-        "id": 2,
-        "nome": "Curso de Inglês Wizard"
+        "_rawValue": "dsadasdasd",
+        "_value": "dsadasdasd"
       },
       "id": 4
     },
     {
-      "duracaoEmSegundos": 1,
+      "duracaoEmSegundos": 0,
       "descricao": {
         "__v_isShallow": false,
         "dep": {
@@ -64,14 +79,28 @@
           "n": 0
         },
         "__v_isRef": true,
-        "_rawValue": "Testando",
-        "_value": "Testando"
+        "_rawValue": "",
+        "_value": ""
       },
       "projeto": {
-        "id": 2,
-        "nome": "Curso de Inglês Wizard"
+        "nome": "Plano de Estudos",
+        "id": 1
       },
       "id": 5
+    },
+    {
+      "duracaoEmSegundos": 0,
+      "descricao": {
+        "__v_isShallow": false,
+        "dep": {
+          "w": 0,
+          "n": 0
+        },
+        "__v_isRef": true,
+        "_rawValue": "asdasdasdasd",
+        "_value": "asdasdasdasd"
+      },
+      "id": 6
     },
     {
       "duracaoEmSegundos": 1,
@@ -82,10 +111,43 @@
           "n": 0
         },
         "__v_isRef": true,
-        "_rawValue": "Outro teste",
-        "_value": "Outro teste"
+        "_rawValue": "asdasdasdasd",
+        "_value": "asdasdasdasd"
       },
-      "id": 6
+      "id": 7
+    },
+    {
+      "duracaoEmSegundos": 0,
+      "descricao": {
+        "__v_isShallow": false,
+        "dep": {
+          "w": 0,
+          "n": 0
+        },
+        "__v_isRef": true,
+        "_rawValue": "",
+        "_value": ""
+      },
+      "id": 8
+    },
+    {
+      "duracaoEmSegundos": 0,
+      "descricao": {
+        "__v_isShallow": false,
+        "dep": {
+          "w": 0,
+          "n": 0
+        },
+        "__v_isRef": true,
+        "_rawValue": "sadasdasd",
+        "_value": "sadasdasd"
+      },
+      "id": 9
+    },
+    {
+      "duracaoEmSegundos": 0,
+      "descricao": "asdasdasda",
+      "id": 10
     }
   ]
 }

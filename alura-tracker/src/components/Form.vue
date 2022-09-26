@@ -22,7 +22,7 @@
 </template>
 
 <script lang="ts">
-import { key } from "@/store"
+import { key } from "../store"
 import { computed, defineComponent, ref } from "vue"
 import { useStore } from "vuex"
 import Temporizador from "./Temporizador.vue"
@@ -53,6 +53,8 @@ export default defineComponent({
     // explicacao do setuo no arquivo de formulario
     setup(props, { emit }) {  // poderia usar o contexto mas desestruturou e pegou somente o emit
 
+
+
         const store = useStore(key)
 
         const projetos = computed(() => store.state.projeto.projetos)
@@ -61,9 +63,10 @@ export default defineComponent({
         const idProjeto = ref('')
 
         const finalizarTarefa = (tempoDecorrido: number): void => {
+            console.log(descricao)
             emit('aoSalvarTarefa', {
                 duracaoEmSegundos: tempoDecorrido,
-                descricao: descricao,
+                descricao: descricao.value,
                 projeto: projetos.value.find(proj => proj.id == idProjeto.value)
             })
             descricao.value = ''

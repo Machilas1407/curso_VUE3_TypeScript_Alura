@@ -41,9 +41,3 @@ export default defineComponent({
     }
 });
 </script>
-<style scoped>
-.clicavel {
-    cursor: pointer;
-}
-</style>
- 

@@ -39,7 +39,7 @@ import Formulario from "../components/Form.vue";
 import Tarefa from "../components/Tarefa.vue";
 import Box from "../components/Box.vue";
 import ITarefa from '../interfaces/ITarefa'
-import { useStore } from "@/store";
+import { useStore } from "../store";
 import { ALTERAR_TAREFA, CADASTRAR_TAREFA, OBTER_PROJETOS, OBTER_TAREFAS } from "@/store/tipo-acoes";
 
 export default defineComponent({

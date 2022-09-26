@@ -43,8 +43,8 @@
 </template>
 <script lang="ts">
 import { computed, defineComponent } from "vue";
-import { useStore } from '@/store'
-import { OBTER_PROJETOS, REMOVER_PROJETO } from "@/store/tipo-acoes";
+import { useStore } from '../../store'
+import { OBTER_PROJETOS, REMOVER_PROJETO } from "../../store/tipo-acoes";
 
 export default defineComponent({
     name: 'Lista',
